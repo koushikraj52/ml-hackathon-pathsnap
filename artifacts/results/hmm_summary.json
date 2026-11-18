@@ -1,0 +1,6 @@
+{
+  "Mean Classifier Top-1 Accuracy": 0.8183021741254656,
+  "Mean HMM Viterbi Top-1 Accuracy": 0.9200912352460084,
+  "Mean Classifier Continuity": 0.8776832881874357,
+  "Mean HMM Viterbi Continuity": 0.9774982538359639
+}

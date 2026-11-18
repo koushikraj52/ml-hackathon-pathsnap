@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and temporary data
+data/processed/*.joblib
+.ipynb_checkpoints/
+.pytest_cache/
+*.log
+
+# Environments
+.env
+venv/
+env/
+ENV/
+
+# OS generated files
+.DS_Store
+Thumbs.db
