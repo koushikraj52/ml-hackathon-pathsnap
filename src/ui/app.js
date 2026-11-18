@@ -28,6 +28,7 @@ async function checkHealth() {
             statusElem.className = "inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500 text-white";
             statusElem.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-white mr-1.5 animate-pulse"></span>Connected (${data.model_loaded})`;
             logMessage(`Backend Status: HEALTHY | Model: ${data.model_loaded} | Evaluation Trips: ${data.evaluation_trips_count}`);
+            await loadEvaluationTrips();
         } else {
             throw new Error(`HTTP ${res.status}`);
         }
@@ -141,6 +142,11 @@ async function runEvaluation() {
 
 // Initial Boot
 window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.protocol.startsWith("http")) {
+        const input = document.getElementById("apiBaseUrl");
+        if (input && (!input.value || input.value.includes("localhost"))) {
+            input.value = window.location.origin;
+        }
+    }
     checkHealth();
-    loadEvaluationTrips();
 });
